@@ -28,7 +28,7 @@ const getTask = (id) => {
 };
 //Crear tarea
 const createTask = (task) => {
-    if(task && task.length > 2){
+    if(task === NaN && task.length > 2){
         if(taskList.length === 0){
             const newTask = {
                 id: 1,
@@ -48,7 +48,7 @@ const createTask = (task) => {
             return(newTask)
         }
     }else{
-        return("Please write a valid task")
+        return("Task is too short or is a number")
     }
     
 };
