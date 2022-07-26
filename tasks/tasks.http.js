@@ -29,11 +29,11 @@ const getThisTask = (req,res) => {
 //Crear tarea
 const createThisTask = (req,res) => {
     const task = req.body.task;
-    if(task){
+    if(task.length > 2 &&  typeof(task) === "string"){
         const newTask = createTask(task);
         res.status(201).json(newTask);
     }else{
-        res.status(400).json({message:"Please write a valid task"})
+        res.status(400).json({message:"Task is too short o is a number"})
     }
         
 };
